@@ -1,0 +1,74 @@
+.msrp {
+    padding-left: 50px;
+    position: absolute;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    
+}
+
+.fuelev {
+    padding-left: 50px;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.production {
+    padding-left: 50px;
+    padding-bottom: 20px;
+    position: absolute;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tenyears {
+    padding-left: 50px;
+    position: absolute;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.totalemissions {
+    padding-left: 50px;
+    position: absolute;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+.totalcost {
+    padding-left: 50px;
+    position: absolute;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.image-container {
+    max-width: 350px;
+    height: 300px;
+    margin: 32px auto;
+    display: flex;
+    border: 0px solid #222;
+}
+
+.image-counter img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.image-countainer .gas{
+    position:relative;
+}

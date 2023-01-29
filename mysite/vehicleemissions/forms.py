@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-import calculation
+
 from .models import CarClass
 
 class CarForm(ModelForm):

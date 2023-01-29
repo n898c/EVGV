@@ -20,6 +20,8 @@ def new(request):
 def aboutus(request):
     return render(request, 'aboutus.html', {})
 
+def carpage(request):
+    return render(request,'cars.html')
 
 def resultsPage(request):
     if request.method == 'POST':

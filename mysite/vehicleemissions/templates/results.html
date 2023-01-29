@@ -10,15 +10,16 @@
     <style>
       customHeading
     {
-        font-family: customHeadingMars;
-        font-weight: 400;
+      font-family: customHeadingMars;
+      font-weight: 400;
     }
     </style>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
-      <div class="container">
-          <a href="#" class="navbar-brand d-flex align-items-center">
+      <div class="container-fluid">
+          <a href="#" class="navbar-brand d-flex align-items-left">
               <customHeading>
                   EVGV
               </customHeading>
@@ -64,10 +65,19 @@
           </thead>
           <tbody>
             <tr>
-              <th><i class = fuelev scope="row">Fuel/Electricity Cost (Over 5 years):</th>
-              <td><i class="fas fa-check">price</i></td>
+              
+{%block content%}
+              <th><i class = tenyears scope="row">Car Model: </i></th>
+              <td><i class="fas fa-check">{{makeName}} {{modelName}}</i></td>
+              <td></td>
+              <td><i class="fas fa-check">{{makeName2}} {{modelName2}}</i></td>
               <td><i class="fas fa-check"></i></td>
-              <td><i class="fas fa-check">price</i></td>
+            </tr>
+            <tr>
+              <th><i class = fuelev scope="row">Fuel/Electricity Cost (Over 5 years):</th>
+              <td><i class="fas fa-check">${{carMpg}}</i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check">${{carMpg2}}</i></td>
               <td><i class="fas fa-check"></i></td>
             </tr>
             <tr>
@@ -80,7 +90,7 @@
               <th><i class = production scope="row">Emissions During Production:</i></th>
               <td><i class="fas fa-check">Optional</i</td>
               <td></td>
-              <td><i class="fas fa-check">H</i></td>
+              <td><i class="fas fa-check">Optional</i></td>
               <td></td>
             </tr>
             <tr>
@@ -89,11 +99,13 @@
                     </tr>
                 </tr>
             </tr>   
+            
+
             <tr>
               <th><i class = tenyears scope="row">Emissions over 10 years:</i></th>
-              <td><i class="fas fa-check">H</i></td>
+              <td><i class="fas fa-check">{{carCO}}</i></td>
               <td></td>
-              <td><i class="fas fa-check">H</i></td>
+              <td><i class="fas fa-check">{{carCO2}}</i></td>
               <td><i class="fas fa-check"></i></td>
             </tr>
             <tr>
@@ -119,7 +131,7 @@
               <th><i class = totalcost scope="row">Total Cost:</i>
               <td><i class="fas fa-check">None</i></td>
               <td></td>
-              <td><i class = "fas fa-check">15$/incident</i></td>
+              <td><i class = "fas fa-check"></i></td>
               <td></td>
             </tr>
             <tr>
@@ -131,6 +143,9 @@
           </tbody>
         </table>
       </div>
+      {%endblock%}
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -7,14 +7,14 @@ from django.shortcuts import render, redirect
 from .forms import CarForm
 def home(request):
     
-    return render(request, 'home.html', {})
+    return render(request, 'index.html', {})
 
 
 def new(request):
    
 
     form=CarForm()
-    return render(request, 'home.html', {'form':form})
+    return render(request, 'index.html', {'form':form})
 
 
 def aboutus(request):
@@ -36,7 +36,7 @@ def resultsPage(request):
 
         carMpg2=modelMPG(modelName2,makeName2)
         
-        #carMpg2=int(float(carMpg2))
+        carMpg2=int(float(carMpg2))
 
         carCO=COperYear(modelName,makeName)
         carCO=int(float(carCO))
@@ -49,7 +49,7 @@ def resultsPage(request):
 
 
         carMpg=((12000/int(carMpg))*3.5)
-        #carMpg2=((12000/int(carMpg2))*3.5)
+        carMpg2=((12000/int(carMpg2))*3.5)
 
         carCO=(12000*float(carCO))/1000000
         #carCO2=(12000*float(carCO2))/1000000

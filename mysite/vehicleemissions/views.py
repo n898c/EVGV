@@ -35,13 +35,16 @@ def resultsPage(request):
 
 
         carMpg2=modelMPG(modelName2,makeName2)
+        
         #carMpg2=int(float(carMpg2))
 
         carCO=COperYear(modelName,makeName)
-       # carCO=int(float(carCO))
+        carCO=int(float(carCO))
 
 
         carCO2=COperYear(modelName2,makeName2)
+
+        print("CAR CO: ",carCO)
         #carCO2=int(float(carCO2))
 
 
@@ -70,9 +73,9 @@ def modelMPG(modelName,makeName):
         reader = csv.reader(file)
         for row in reader:
             
-            if str(row[1]).upper()==makeName.upper() and str(row[4]).upper()==modelName.upper():
+            if ((row[1]).upper())==makeName.upper() and str(row[4]).upper()==modelName.upper():
                 
-                return row[45]
+                return (row[45])
         else:
             print("not found")
 
@@ -84,7 +87,8 @@ def COperYear(modelName,makeName):
         for row in reader:
             
             if str(row[1]).upper()==makeName.upper() and str(row[4]).upper()==modelName.upper():
-                
+                if (row[40]==""):
+                    return 0
                 return row[40]
         else:
             print("not found")

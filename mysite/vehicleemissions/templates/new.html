@@ -1,0 +1,13 @@
+
+{%block content%}
+
+
+insert info
+<form method="POST" >
+    {% csrf_token %}
+   {{form}}
+    <button type="submit" >Submit</button>
+</form>
+{{ form.media }}
+
+{%endblock%}

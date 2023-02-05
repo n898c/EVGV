@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vehicleemissions',
+<<<<<<< HEAD
    
+=======
+    'calculation',
+    
+>>>>>>> 615f47c6dbc576d0b7f9006acffca59b234e6f62
 ]
 
 MIDDLEWARE = [

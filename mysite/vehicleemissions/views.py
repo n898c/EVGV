@@ -7,22 +7,28 @@ from django.shortcuts import render, redirect
 from .forms import CarForm
 def home(request):
     
-    return render(request, 'home.html', {})
+    return render(request, 'index.html', {})
 
 
 def new(request):
    
 
     form=CarForm()
-    return render(request, 'home.html', {'form':form})
+    return render(request, 'index.html', {'form':form})
 
 
 def aboutus(request):
     return render(request, 'aboutus.html', {})
 
+<<<<<<< HEAD
 def carpage(request):
     return render(request,'cars.html')
 
+=======
+def cars(request):
+    return render(request, 'cars.html', {})
+    
+>>>>>>> 615f47c6dbc576d0b7f9006acffca59b234e6f62
 def resultsPage(request):
     if request.method == 'POST':
         form=CarForm(request.POST)
@@ -37,18 +43,21 @@ def resultsPage(request):
 
 
         carMpg2=modelMPG(modelName2,makeName2)
-        #carMpg2=int(float(carMpg2))
+        
+        carMpg2=int(float(carMpg2))
 
         carCO=COperYear(modelName,makeName)
-       # carCO=int(float(carCO))
+        carCO=int(float(carCO))
 
 
         carCO2=COperYear(modelName2,makeName2)
+
+        print("CAR CO: ",carCO)
         #carCO2=int(float(carCO2))
 
 
         carMpg=((12000/int(carMpg))*3.5)
-        #carMpg2=((12000/int(carMpg2))*3.5)
+        carMpg2=((12000/int(carMpg2))*3.5)
 
         carCO=(12000*float(carCO))/1000000
         #carCO2=(12000*float(carCO2))/1000000
@@ -72,9 +81,9 @@ def modelMPG(modelName,makeName):
         reader = csv.reader(file)
         for row in reader:
             
-            if str(row[1]).upper()==makeName.upper() and str(row[4]).upper()==modelName.upper():
+            if ((row[1]).upper())==makeName.upper() and str(row[4]).upper()==modelName.upper():
                 
-                return row[45]
+                return (row[45])
         else:
             print("not found")
 
@@ -86,7 +95,8 @@ def COperYear(modelName,makeName):
         for row in reader:
             
             if str(row[1]).upper()==makeName.upper() and str(row[4]).upper()==modelName.upper():
-                
+                if (row[40]==""):
+                    return 0
                 return row[40]
         else:
             print("not found")
